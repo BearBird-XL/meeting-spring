@@ -1,3 +1,4 @@
+-- CREATE DATABASE ssm;
 -- 创建图书表
 CREATE TABLE `book`
 (

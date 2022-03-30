@@ -60,4 +60,4 @@ buildNumber.properties
 .mvn/timing.properties
 
 ### lib
-lib/
+/lib/
