@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -31,10 +32,11 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model) {
+    public String list(ModelAndView model) {
         List<Book> list = bookService.getList();
-        model.addAttribute("list", list);
+        model.addObject("list", list);
         // list.jsp + model = ModelAndView
+        model.addObject("msg", "annamaple");
         return "list";// WEB-INF/jsp/"list".jsp
     }
     
